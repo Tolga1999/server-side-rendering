@@ -1,0 +1,27 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+/* Custom properties */
+:root {
+  --background-color-black: #000000;
+  --text-color-green: #00FF00;
+}
+
+body {
+  background-color: var(--background-color-black);
+  color: var(--text-color-green);
+}
+
+/* stekje container */
+.stekje-container:nth-child(2){
+  margin-top: 1em;
+}
+
+.stekje-container{
+  margin-bottom: 1em;
+}
+/* stekje container end */

@@ -1,0 +1,17 @@
+<%- include('./partials/head') %>
+
+<main>
+  <section>
+    <p>We currently testing the API and Node.</p>
+    <% stekjes.forEach(stekje => { %>
+    <div class="stekje-container">
+      <p><%= stekje.naam %></p>
+      <p><%= stekje.landvanherkomst %></p>
+      <p><%= stekje.giftig %></p>
+      <p><%= stekje.aanmelddatum %></p>
+    </div>
+    <% }) %>
+  </section>
+</main>
+
+<%- include('./partials/foot') %>
