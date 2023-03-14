@@ -7,21 +7,37 @@
 
 /* Custom properties */
 :root {
-  --background-color-black: #000000;
-  --text-color-green: #00FF00;
+  --background-color-white: #FFF;
+  --background-color-blue: #333467;
 }
 
 body {
-  background-color: var(--background-color-black);
-  color: var(--text-color-green);
+  background-color: var(--background-color-white);
 }
 
-/* stekje container */
-.stekje-container:nth-child(2){
-  margin-top: 1em;
+header{
+  background-color: var(--background-color-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
 }
 
-.stekje-container{
-  margin-bottom: 1em;
+.logo {
+  width: 100%;
+  max-width: 8em;
 }
-/* stekje container end */
+
+/* icons */
+.nav-icons{
+  display: flex;
+}
+
+.nav-icons svg {
+  width: 100%;
+}
+
+.nav-icons svg:nth-child(2) {
+  margin-left: 1em;
+}
+/* icons end */
