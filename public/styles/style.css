@@ -7,12 +7,17 @@
 
 /* Custom properties */
 :root {
+
   --background-color-white: #FFF;
   --background-color-blue: #333467;
+  --background-color-green: #4E7141;
+  --text-color-white: #FFF;
 }
 
 body {
   background-color: var(--background-color-white);
+  color: var(--text-color-white);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header{
@@ -41,3 +46,23 @@ header{
   margin-left: 1em;
 }
 /* icons end */
+
+/* h1 kies plantje */
+.h1-kies-plantje{
+  background-color: var(--background-color-green);
+  padding: 1.75em 1.75em;
+  border-radius: 1.5em;
+  width: 20em;
+  margin: 2em auto;
+}
+
+.h1-kies-plantje h1{
+  font-size: 2em;
+}
+
+.h1-kies-plantje p{
+  font-size: 0.9em;
+  margin-top: 0.33em;
+  line-height: 1.1em;
+}
+/* h1 kies plantje end */
