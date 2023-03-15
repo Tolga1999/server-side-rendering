@@ -31,7 +31,7 @@
   </section>
 
   <% stekjes.forEach(stekje => { %>
-  <a id="stekje-meer-info-anchor" href="/">
+  <a id="stekje-more-info-anchor" href="/">
     <section class="stekje-container">
       <img src="./assets/plant.jpg">
       <section class="stekje-name-container">
@@ -41,9 +41,11 @@
     <% }) %>
   </a>
 
+  <!-- absolute dark overlay onder de modal -->
+  <section class="dark-background-overlay"></section>
+
   <!-- absolute modal for each stekje -->
-  <section class="stekje-modal-more-info">
-  </section>
+  <section class="stekje-modal-more-info"></section>
 </main>
 
 
