@@ -28,16 +28,23 @@
   <section class="h1-kies-plantje">
     <h1>Kies je plantje</h1>
     <p>Wat voor plantje zou je graag willen? We hebben voor iedereen een plantje!</p>
-    <!-- <p>We currently testing the API and Node.</p>
-    <% stekjes.forEach(stekje => { %>
-    <div class="stekje-container">
-      <p><%= stekje.naam %></p>
-      <p><%= stekje.landvanherkomst %></p>
-      <p><%= stekje.giftig %></p>
-      <p><%= stekje.aanmelddatum %></p>
-    </div>
-    <% }) %> -->
+  </section>
+
+  <% stekjes.forEach(stekje => { %>
+  <a id="stekje-meer-info-anchor" href="/">
+    <section class="stekje-container">
+      <img src="./assets/plant.jpg">
+      <section class="stekje-name-container">
+        <p><%= stekje.naam %></p>
+      </section>
+    </section>
+    <% }) %>
+  </a>
+
+  <!-- absolute modal for each stekje -->
+  <section class="stekje-modal-more-info">
   </section>
 </main>
+
 
 <%- include('./partials/foot') %>
