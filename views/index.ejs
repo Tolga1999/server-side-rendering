@@ -31,21 +31,31 @@
   </section>
 
   <% stekjes.forEach(stekje => { %>
-  <a id="stekje-more-info-anchor" href="/">
+  <a id="stekje-more-info-anchor" href="#<%= stekje.slug %>">
     <section class="stekje-container">
-      <img src="./assets/plant.jpg">
+      <!-- <img src="./assets/plant.jpg"> -->
+      <img src="<%=stekje.fotos[0].original %>">
       <section class="stekje-name-container">
         <p><%= stekje.naam %></p>
       </section>
     </section>
-    <% }) %>
   </a>
+
+  <!-- absolute modal for each stekje -->
+  <section class="stekje-modal-more-info" id="<%= stekje.slug %>">
+    <h2><%= stekje.naam %></h2>
+    <p>Land van herkomst: <%= stekje.landvanherkomst %></p>
+    <p>Giftig: <%= stekje.giftig %></p>
+    <p>Verpotten: <%= stekje.verpotten %></p>
+    <p>Voeding: <%= stekje.voeding %></p>
+    <p>Aanmelddatum: <%= stekje.aanmelddatum %></p>
+    <button class="modal-button">Ruilen</button>
+  </section>
+  <% }) %>
 
   <!-- absolute dark overlay onder de modal -->
   <section class="dark-background-overlay"></section>
 
-  <!-- absolute modal for each stekje -->
-  <section class="stekje-modal-more-info"></section>
 </main>
 
 

@@ -4,12 +4,8 @@ import express from 'express'
 // Maak een nieuwe express app aan
 const app = express()
 
-// maak een const voor de API, url voor stekjes
-const urlStekjes = 'https://api.buurtcampus-oost.fdnd.nl/api/v1/stekjes';
-
-// wacht op de url totdat je de data krijgt en DAN verander je de response van je url naar JSON
-const data = await fetch(urlStekjes).then(response => response.json());
-console.log(data);
+// maak een const voor de API, dit is de BASE URL
+const url = 'https://api.buurtcampus-oost.fdnd.nl/api/v1';
 
 // Stel ejs in als template engine en geef de 'views' map door
 app.set('view engine', 'ejs')
@@ -19,9 +15,15 @@ app.set('views', './views')
 app.use(express.static('public'))
 
 // Maak een route voor de index
-app.get('/', function (request, response) {
-// render de pagina maar ook de data van de API door naar view
-  response.render('index', data)
+app.get('/', async function (request, response) {
+
+  // voeg base url toe met stekjes = stekjes url
+  const urlStekjes = url + "/stekjes"
+
+  const data = await fetch(urlStekjes).then(response => response.json());
+
+  // render de pagina maar ook de data van de API door naar view
+    response.render('index', data)
 })
 
 // Stel het poortnummer in waar express op gaat luisteren

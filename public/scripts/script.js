@@ -1,12 +1,13 @@
 // maak variables voor stekjes anchors en de stekje modal
 let stekjeAnchors = document.querySelectorAll("#stekje-more-info-anchor");
 let darkOverlay = document.querySelector(".dark-background-overlay");
-let stekjeAnchorModal = document.querySelector(".stekje-modal-more-info");
 
 stekjeAnchors.forEach(stekjeAnchor => {
-    stekjeAnchor.addEventListener("click", eventAnchor => {
-        // stop default refresh van anchor
-        eventAnchor.preventDefault();
+    stekjeAnchor.addEventListener("click", function(eventAnchor) {
+        
+        // hiermee wordt de href opgepakt van de anchor wat doorverwijst naar de modal met de unieke id
+        let stekjeAnchorModal = document.querySelector(this.getAttribute('href'));
+        console.log(stekjeAnchorModal)
 
         // zet main op overflow hidden
         let body = document.querySelector("body");
@@ -33,5 +34,8 @@ stekjeAnchors.forEach(stekjeAnchor => {
                 body.classList.remove("body-overflow-hidden");
             }
         })
+
+        // stop default refresh van anchor
+        eventAnchor.preventDefault();
     })
 })
