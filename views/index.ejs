@@ -43,12 +43,14 @@
 
   <!-- absolute modal for each stekje -->
   <section class="stekje-modal-more-info" id="<%= stekje.slug %>">
-    <h2><%= stekje.naam %></h2>
-    <p>Land van herkomst: <%= stekje.landvanherkomst %></p>
-    <p>Giftig: <%= stekje.giftig %></p>
-    <p>Verpotten: <%= stekje.verpotten %></p>
-    <p>Voeding: <%= stekje.voeding %></p>
-    <p>Aanmelddatum: <%= stekje.aanmelddatum %></p>
+    <div>
+      <h2><%= stekje.naam %></h2>
+      <p>Land van herkomst: <%= stekje.landvanherkomst %></p>
+      <p>Giftig: <%= stekje.giftig %></p>
+      <p>Verpotten: <%= stekje.verpotten %></p>
+      <p>Voeding: <%= stekje.voeding %></p>
+      <p>Aanmelddatum: <%= stekje.aanmelddatum %></p>
+    </div>
     <button class="modal-button">Ruilen</button>
   </section>
   <% }) %>

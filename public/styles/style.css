@@ -138,6 +138,7 @@ header{
 .stekje-modal-more-info{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   bottom: 0;
   left: 0;
