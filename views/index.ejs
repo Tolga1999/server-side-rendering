@@ -1,59 +1,62 @@
 <%- include('./partials/head') %>
 
+<header>
+  <a href="./">
+    <img class="logo" src="./assets/plantswap-logo-white.png" alt="plant logo">
+  </a>
+  <div class="nav-icons">
+    <!-- SEARCH ICON -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40"
+      viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <circle cx="10" cy="10" r="7" />
+      <line x1="21" y1="21" x2="15" y2="15" />
+    </svg>
+    <!-- USER ICON -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="40" height="40"
+      viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+      stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+    </svg>
+  </div>
+</header>
+
 <main>
-  <header>
-    <a href="./index.html">
-      <img class="logo" src="./assets/plantswap-logo-white.png" alt="plant logo">
-    </a>
-    <div class="nav-icons">
-      <!-- SEARCH ICON -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="40" height="40"
-        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <circle cx="10" cy="10" r="7" />
-        <line x1="21" y1="21" x2="15" y2="15" />
-      </svg>
-      <!-- USER ICON -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="40" height="40"
-        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-        stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="10" r="3" />
-        <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-      </svg>
-    </div>
-  </header>
   <section class="h1-kies-plantje">
     <h1>Kies je plantje</h1>
     <p>Wat voor plantje zou je graag willen? We hebben voor iedereen een plantje!</p>
   </section>
 
-  <% stekjes.forEach(stekje => { %>
-  <a id="stekje-more-info-anchor" href="#<%= stekje.slug %>">
-    <section class="stekje-container">
-      <!-- <img src="./assets/plant.jpg"> -->
-      <img src="<%=stekje.fotos[0].original %>">
-      <section class="stekje-name-container">
-        <p><%= stekje.naam %></p>
+  <div class="desktop-stekjes-container">
+    <% stekjes.forEach(stekje => { %>
+    <a id="stekje-more-info-anchor" href="#<%= stekje.slug %>">
+      <section class="stekje-container">
+        <!-- <img src="./assets/plant.jpg"> -->
+        <img src="<%=stekje.fotos[0].original %>">
+        <section class="stekje-name-container">
+          <p><%= stekje.naam %></p>
+        </section>
       </section>
-    </section>
-  </a>
+    </a>
 
-  <!-- absolute modal for each stekje -->
-  <section class="stekje-modal-more-info" id="<%= stekje.slug %>">
-    <div>
-      <h2><%= stekje.naam %></h2>
-      <p>Land van herkomst: <%= stekje.landvanherkomst %></p>
-      <p>Giftig: <%= stekje.giftig %></p>
-      <p>Verpotten: <%= stekje.verpotten %></p>
-      <p>Voeding: <%= stekje.voeding %></p>
-      <p>Aanmelddatum: <%= stekje.aanmelddatum %></p>
-    </div>
-    <button class="modal-button">Ruilen</button>
-  </section>
-  <% }) %>
+    <!-- absolute modal for each stekje -->
+    <section class="stekje-modal-more-info" id="<%= stekje.slug %>">
+      <div>
+        <h2><%= stekje.naam %></h2>
+        <p>Land van herkomst: <%= stekje.landvanherkomst %></p>
+        <p>Giftig: <%= stekje.giftig %></p>
+        <p>Verpotten: <%= stekje.verpotten %></p>
+        <p>Voeding: <%= stekje.voeding %></p>
+        <p>Aanmelddatum: <%= stekje.aanmelddatum %></p>
+      </div>
+      <button class="modal-button">Ruilen</button>
+    </section>
+    <% }) %>
+  </div>
 
   <!-- absolute dark overlay onder de modal -->
   <section class="dark-background-overlay"></section>

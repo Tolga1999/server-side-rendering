@@ -184,3 +184,34 @@ header{
   overflow: hidden;
 }
 /* modal stekje more info + dark overlay end */
+
+/* desktop media query */
+@media screen and (min-width: 1020px) {
+  .h1-kies-plantje{
+    width: 35em;
+    margin: 2em 3em;
+  }
+
+  .h1-kies-plantje h1{
+    font-size: 3em;
+  }
+
+  .h1-kies-plantje p{
+    font-size: 1.5em;
+  }
+
+  .desktop-stekjes-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stekje-container{
+    margin: 1em 3em;
+  }
+
+  .stekje-container img, .stekje-name-container{
+    min-width: 24em;
+    max-width: 24em;
+  }
+}
